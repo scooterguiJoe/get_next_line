@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 11:55:10 by guvascon          #+#    #+#             */
-/*   Updated: 2025/01/08 17:06:24 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:26:15 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 # define BUFFER_SIZE 42
 # endif
 
-size_t	ft_strlen(const char *str);
-char	*ft_strjoin(char const *str, char const *buffer);
-int		check_newline(char *str);
+int	ft_strlen(const char *str);
+char	*ft_strjoin(char *str, char *buffer);
+int	check_newline(char *str);
 char	*get_next_line(int fd);
 
 #endif
