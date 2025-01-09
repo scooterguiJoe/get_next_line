@@ -24,7 +24,7 @@
 
 int	ft_strlen(const char *str);
 char	*ft_strjoin(char *str, char *buffer);
-int	check_newline(char *str);
+void	check_newline(char *str);
 char	*get_next_line(int fd);
 
 #endif

@@ -25,7 +25,7 @@ int	ft_strlen(const char *s)
 		return (0);
 	while (s[i] && s[i] != '\n')
 		i++;
-	return (i + s[i] == '\0');
+	return (i);
 }
 
 /* char	*ft_strjoin(char *str, char *buffer)
@@ -85,11 +85,11 @@ char	*ft_strjoin(char *str, char *buffer)
 		j++;
 	}
 	s1[i + j] = '\0';
-	//free(str);
+	free(str);
 	return (s1);
 }
 
-int	check_newline(char *str)
+void	check_newline(char *str)
 {
 	int	i;
 	int	j;
@@ -107,7 +107,6 @@ int	check_newline(char *str)
 		j++;
 	}
 	str[j] = '\0';
-	return (0);
 }
 
 
