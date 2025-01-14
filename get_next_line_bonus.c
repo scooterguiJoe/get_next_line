@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 15:22:30 by guvascon          #+#    #+#             */
-/*   Updated: 2025/01/14 12:04:54 by guvascon         ###   ########.fr       */
+/*   Created: 2025/01/14 12:16:23 by guvascon          #+#    #+#             */
+/*   Updated: 2025/01/14 12:20:13 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	buff[BUFFER_SIZE + 1];
+	static char	buff[FOPEN_MAX][BUFFER_SIZE + 1];
 
 	if (fd < 0 || BUFFER_SIZE < 1 || fd >= FOPEN_MAX)
 		return (NULL);
 	line = NULL;
-	while (buff[0] || read(fd, buff, BUFFER_SIZE) > 0)
+	while (buff[fd][0] || read(fd, buff[fd], BUFFER_SIZE) > 0)
 	{
-		line = ft_strjoin(line, buff);
+		line = ft_strjoin(line, buff[fd]);
 		//printf("line 1= %s\n", line);
 		if (!line)
 			return (NULL);
 		//printf("line 2= %s\n", line);
-		check_newline(buff);
+		check_newline(buff[fd]);
 		//printf("line 3= %s\n", line);
 		if (line[ft_strlen(line) - 1] == '\n')
 			return (line);
@@ -35,20 +35,7 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-
-/*  int main()
-{
-	int fd = open("teste.txt", O_RDONLY);
-	char *str;
-	str = get_next_line(fd);
-	printf("%s\n", str);
-	// str = get_next_line(fd);
-	// printf("%s\n", str);
-	free (str);
-	close(fd);
-	return (0);
-}  */
-/* int main()
+int main()
 {
 	int i = 0;
 	
@@ -59,4 +46,4 @@ char	*get_next_line(int fd)
 		i++;
 	}
 	return 0;
-} */
+}

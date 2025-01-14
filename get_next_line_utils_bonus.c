@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 11:55:03 by guvascon          #+#    #+#             */
-/*   Updated: 2025/01/14 12:01:56 by guvascon         ###   ########.fr       */
+/*   Created: 2025/01/14 12:14:16 by guvascon          #+#    #+#             */
+/*   Updated: 2025/01/14 12:15:02 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-// #include <unistd.h>
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <fcntl.h>
+#include "get_next_line_bonus.h"
 
 int	ft_strlen(char *s)
 {
@@ -80,22 +76,3 @@ void	check_newline(char *str)
 	}
 	str[j] = '\0';
 } 
-
-// int main()
-// {
-// 	char *s;
-	
-// 	s = ft_strjoin("fe", "liz");
-// 	printf("%d\n", ft_strlen(s));
-//     printf("%s\n", s);
-//     return 0;
-// }
-// int main()
-// {
-//     char str[] = "feijao\n batata.";
-      
-//     check_newline(str);
-//     printf("%s\n", str);
-    
-//     return 0;
-// }
