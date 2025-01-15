@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 12:14:16 by guvascon          #+#    #+#             */
-/*   Updated: 2025/01/14 12:15:02 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/01/15 15:26:24 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,13 @@ char	*ft_strjoin(char *str, char *buffer)
 	while (buffer[j] && buffer[j] != '\n')
 	{
 		s1[i + j] = buffer[j];
-		if (buffer[j] == '\n')
+		if (buffer[j++] == '\n')
 			break ;
-		j++;
 	}
 	if (buffer[j] == '\n')
-	{
-		s1[i + j] = '\n';
-		j++;
-	}
+		s1[i + j++] = '\n';
 	s1[i + j] = '\0';
-	free(str);
-	return (s1);
+	return (free(str), s1);
 }
 
 void	check_newline(char *str)
@@ -75,4 +70,4 @@ void	check_newline(char *str)
 		j++;
 	}
 	str[j] = '\0';
-} 
+}

@@ -6,11 +6,11 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 12:16:23 by guvascon          #+#    #+#             */
-/*   Updated: 2025/01/14 12:20:13 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/01/15 17:42:18 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {
@@ -23,27 +23,23 @@ char	*get_next_line(int fd)
 	while (buff[fd][0] || read(fd, buff[fd], BUFFER_SIZE) > 0)
 	{
 		line = ft_strjoin(line, buff[fd]);
-		//printf("line 1= %s\n", line);
 		if (!line)
 			return (NULL);
-		//printf("line 2= %s\n", line);
 		check_newline(buff[fd]);
-		//printf("line 3= %s\n", line);
 		if (line[ft_strlen(line) - 1] == '\n')
 			return (line);
-		
 	}
 	return (line);
 }
-int main()
+/* int main()
 {
 	int i = 0;
 	
 	int fd = open("teste.txt", O_RDONLY);
-	while (i < 3)
+	while (i < 5)
 	{
-		printf("%s\n", get_next_line(fd));
+		printf("%s", get_next_line(fd));
 		i++;
 	}
 	return 0;
-}
+} */

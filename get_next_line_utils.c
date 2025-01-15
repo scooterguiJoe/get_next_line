@@ -6,7 +6,7 @@
 /*   By: guvascon <guvascon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 11:55:03 by guvascon          #+#    #+#             */
-/*   Updated: 2025/01/14 12:01:56 by guvascon         ###   ########.fr       */
+/*   Updated: 2025/01/15 17:50:08 by guvascon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,9 @@ char	*ft_strjoin(char *str, char *buffer)
 		j++;
 	}
 	if (buffer[j] == '\n')
-	{
-		s1[i + j] = '\n';
-		j++;
-	}
+		s1[i + j++] = '\n';
 	s1[i + j] = '\0';
-	free(str);
-	return (s1);
+	return (free(str), s1);
 }
 
 void	check_newline(char *str)
